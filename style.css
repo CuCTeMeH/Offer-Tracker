@@ -1,0 +1,16 @@
+.right {
+float: right;
+}
+.left {
+float: left;
+}
+.right_table{
+float: right;
+margin-right: 50px;
+}
+.textarea{
+margin-left: 10px;
+}
+.pmargin{
+padding-left: 70px;
+}
