@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost'; // Host name Normally 'LocalHost'
-$user = ''; // MySQL login username
+$user = 'root'; // MySQL login username
 $pass = ''; // MySQL login password
-$database = 'db'; // Database name
+$database = 'offer-track'; // Database name
  
 mysql_connect($host, $user, $pass);
 mysql_select_db($database);

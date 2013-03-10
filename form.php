@@ -87,20 +87,20 @@ function setOutput(){
 			});
 		</script>
 		
-		<title>Създаване на нова справка</title>
+		<title>New Offer</title>
 	</head>
 	<body>
 <img src="images/logo_master.gif" align="left" width="250" height="100"/>
-<div class="right">
+<!--<div class="right">
 <ul>
 <li>Пневматика и хидравлика</li>
 <li>Електроапаратура</li>
 <li>Линейна и монтажна техника</li>
 <li>Инженеринг</li>
 </ul>
-</div>
+</div>-->
 <br /><br /><br /><br /><br /><br /><br /><br />
-<div align="center">Оферта № <?php  $result = mysql_query("SELECT id FROM forms ORDER BY id DESC LIMIT 0 , 1");
+<div align="center">Offer No. <?php  $result = mysql_query("SELECT id FROM forms ORDER BY id DESC LIMIT 0 , 1");
 while($row = mysql_fetch_array($result))
 { 
 extract($row);
@@ -109,42 +109,40 @@ echo "$id"; }?> / <?php echo date("d.m.Y", time()); ?></div>
 <hr />
 <hr />
 <form action="form_processing.php" method="post" autocomplete="on">
-<div class="left">До: <input type="text" name="company" id="company" onChange="lookItUp();"/><br />
-На вниманието на: <input type="text" name="name" id="name" /><br />
-Копие до: <input type="text" name="copy_to" id="copy_to" /><br />
-Телефон: <input type="text" name="tel" id="tel" /><br />
-Факс: <input type="text" name="fax" id="fax" /><br />
+<div class="left">To: <input type="text" name="company" id="company" onChange="lookItUp();"/><br />
+<input type="text" name="name" id="name" value="Person Name"/><br />
+Cc: <input type="text" name="copy_to" id="copy_to" /><br />
+Telephone: <input type="text" name="tel" id="tel" /><br />
+Fax: <input type="text" name="fax" id="fax" /><br />
 E-mail: <input type="text" name="email" id="email" /><br />
 </div>
-<div class="right">От: <?php  $result = mysql_query("SELECT * FROM masters WHERE 1");
+<div class="right">From: <?php  $result = mysql_query("SELECT * FROM masters WHERE 1");
 while($row = mysql_fetch_array($result))
 { 
 extract($row);
 
 echo "$company_name";?><br />
-Адрес: <?php  echo "$address"; ?><br />
-Тел: <?php echo "$telephone";  ?><br />
-Факс: <?php echo "$fax"; ?><br />
+Address: <?php  echo "$address"; ?><br />
+Telephone: <?php echo "$telephone";  ?><br />
+Fax: <?php echo "$fax"; ?><br />
 Email: <?php echo "$email"; ?><br />
 Web: <?php echo "$website"; } ?><br />
 </div><br /><br /><br /><br /><br /><br /><br />
 <hr />
 <hr />
-<p align="center">Уважаеми Г-н/Г-жа <input type="text" name="realname" id="realname" /> </p>
-<p align="center">Благодарим за Вашето запитване за доставка на <input type="text" name="freetext" />. </p>
-<p align="center">Имаме удоволствието да предложим на Вашето внимание нашата оферта: </p>
+<p align="center">Dear Mr./Mrs. <input type="text" name="realname" id="realname" /> </p>
+<p align="center">Thank you for your request for <input type="text" name="freetext" />. </p>
+<p align="center">As requested, we are pleased to quote you without engagement, for the following:</p>
 <br /><br />
 <div align="center">    
 <table id="options-table">					
 			<tr>
-				<td>№</td>
-				<td>Ном. ном.</td>
-				<td>Наименование</td>
+				<td>No.</td>
+				<td>Product</td>
 				<td>Мярка</td>
-				<td>Колич.</td>
+				<td>Quantity</td>
 				<td>Ед. цена</td>
 				<td>Общо</td>
-				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td><input type="text"   name="input_box_one[]" /></td>
